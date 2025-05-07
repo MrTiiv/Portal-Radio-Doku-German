@@ -134,7 +134,7 @@ Die Löcher für den ein/aus Schalter so wie das Loch für den Poti hinten und d
 ### Schaltplan
 Wie bereits am Anfang erwähnt, habe ich die Elektronik von einer DIY Anleitung für ein Internetradio von AZ Delivery abgeschaut. Aber bevor ich die Elektronik verdrahtet und eingebaut habe, habe ich mit der Software **Fritzing** einen Schaltplan erstellt, den ich euch hier zur Verfügung stelle. 
 
-![Alt](https://github.com/MrTiiv/Portal-Radio-Doku-German/blob/main/Bilder%20f%C3%BCr%20Doku/Portal%20Radio%20Sketch%20V0.1%20Schematic.png?raw=true)
+![Alt](https://github.com/MrTiiv/Portal-Radio-Doku-German/blob/main/Bilder%20f%C3%BCr%20Doku/Portal%20Radio%20Sketch%20V0.2%20Schematic.png?raw=true)
 > VORSICHT! Bei der Programmierung des DFPlayers ist RX und TX wieso auch immer gedreht.
 z.b. **`SoftwareSerial mySoftwareSerial(11, 10); // RX, TX`** funktioniert nicht du musst
  **`SoftwareSerial mySoftwareSerial(10, 11); // RX, TX`** verwenden.
