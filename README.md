@@ -35,9 +35,10 @@ Das Problem mit dem Absturz ist behoben. Ich habe Kondensatoren hinzugefügt, ei
   
 Das Radio hat folgende Funktionen:
 
--   Beim Einschalten leuchten die LEDs am Ring blau auf, die 7-Segment-Anzeige zeigt „85.2“ an, und die Radiomusik aus dem Spiel beginnt zu spielen.
--   Die blaue LED an der Front leuchtet, sobald der Code „hochgefahren“ ist, als Indikator.
--   Über einen Drehregler kann die Lautstärke eingestellt werden. Weitere Funktionen wie Songauswahl und Frequenzeinstellung sind geplant.
+-   Beim Einschalten leuchten die LEDs am Ring blau auf, die 7-Segment-Anzeige zeigt eine Startup Animation und ein Startup Sound ist zu hören
+-   Nach dem Einschalten leuchtet die blaue LED an der Front als Indikatior das die Musik abgespielt wird.
+-   Beim Betätigen des Potis blinkt die blaue LED an der Front und es kann mithilfe des Potis eine neue "Frequenz" eingestellt werden die beim erneuten betätigen des Potis bestätigt wird.
+-   Über den Drehregler oben kann die Lautstärke eingestellt werden.
   
 ### Teileliste
   
