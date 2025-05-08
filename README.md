@@ -22,7 +22,10 @@ Verwendete Drucker:
 
 ### Bekannte Probleme
 Da dies mein erstes Projekt ist, kenne ich mich mit der verwendeten Mikroelektronik noch wenig aus. Ein nerviges Problem ist der DFPlayer. Beim Einschalten gibt er ein Störgeräusch von sich, bevor er den Song abspielt. Auch während des Songs ist ein leises, aber hörbares Störgeräusch vorhanden, insbesondere bei geringer Lautstärke. Bis jetzt habe ich dafür noch keine Lösung gefunden.
-Dreht man den Verstärker PAM8403 bis ganz an Ende zu dem Rastpunkt und wieder zurück Startet der Arduino aus unbekannten Gründen neu. Ich habe das Problem bisher noch nicht behoben und habe bisher auch noch keinen Lösungsansatz.
+
+~~Dreht man den Verstärker PAM8403 bis ganz an Ende zu dem Rastpunkt und wieder zurück Startet der Arduino aus unbekannten Gründen neu. Ich habe das Problem bisher noch nicht behoben und habe bisher auch noch keinen Lösungsansatz.~~
+Das Problem mit dem Absturz ist behoben. Ich habe Kondensatoren hinzugefügt, einmal auf Plus und einmal auf Minus (siehe Schaltplan), damit ist das Problem im Augenblick behoben.
+
   
 ## Das Portal Radio
 ![Alt](https://github.com/MrTiiv/Portal-Radio-Doku-German/blob/main/Bilder%20f%C3%BCr%20Doku/Portal%20Radio%20Front.jpg?raw=true)![Alt](https://github.com/MrTiiv/Portal-Radio-Doku-German/blob/main/Bilder%20f%C3%BCr%20Doku/Portal%20Radio%20Back.jpg?raw=true)
@@ -160,14 +163,23 @@ Die 7 Segment Anzeige habe ich in das von mir geänderte Front Panel eingeschrau
 Die Lautsprecher habe ich schräg in das Front Panel eingeschraubt damit die Membranen sogesehen durch den "grill-left" und "grill-right" hindurchschauen.
 
 ### Der Code
-Den Code stelle ich hier zur Vefügung, sobald er so weit ist. Der Code, der gerade auf dem Arduino läuft ist eigentlich nur ein Test Code und ich glaube jeder der sich mit dem Arduino auskennt, würde mich umbringen dafür :D (aber es funktioniert)
 
-Beim Code schreibe ist nur das zu beachten, was ich oben unter den Schaltplan geschrieben habe, sonst funktioniert es nicht.
+Dieser Code ist mein erster selber geschriebener Code für einen Arduino. Bitte teilt es mir mit falls fehler oder Optimierungen zu sehen sind.
 
-> VORSICHT! Bei der Programmierung des DFPlayers ist RX und TX wieso auch immer gedreht.
-z.b. **`SoftwareSerial mySoftwareSerial(11, 10); // RX, TX`** funktioniert nicht du musst
- **`SoftwareSerial mySoftwareSerial(10, 11); // RX, TX`** verwenden.
-Also **RX = TX** und **TX = RX** (wieso auch immer?)
+Der Code hat folgende Funktion:
+
+Das Radio fährt beim einschalten hoch und zeigt während des hochfahrens eine kleine Animation vorne auf der Anzeige gefolgt von einem Startup Sound.
+Nachdem das hochfahren abgeschlossen ist Spielt das Radio den Standart Portal Radio Sound im loop und zeigt vorne auf der Anzeige 85.2. 
+Wenn der POTI hinten am Radio betätigt wird kann eine andere "Frequenz" eingestellt werden. Wird die gewünschte Frequenz eingestellt und erneut mit dem betätigen des POTIS bestätigt Spielt das Radio einen anderen Song der vorher auf die SD Karte geladen wurde.
+(Die Songs und die Nummern der Songs müssen im Code natürlich demensprechen angepasst werden. Bei der von mir Verwendeten DFPlayer Libary ist es so das die Nummer 1 der erste Song ist der auf die SDKarte geladen wurde. Nummer 2 ist der zweite Song der auf die SD Karte geladen wurde etc....)
+Alles im allem ist das die Hauptaufgabe des Codes, weitere funktionen kann man sich aus den (hoffentlich verständlichen) Kommentaren des Codes entnehmen. 
+
+AI Disclaimer:
+Der Code wurde von mir  geschrieben aber AI hat mir geholfen bei den Kommentaren und bei generellen Fragen beim Schreiben des Codes.
+- GitHub Copilot hat mir bei den Kommentaren geholfen
+- ChatGPT hat mir beim beantworten von Fragen geholfen und bei dem Optimieren der Kommentare.
+Keiner der AI Programme hat eine Zeile des Codes geschrieben.
+
 
 ## Schlusswort
 Ich hoffe, diese Dokumentation hilft beim Nachbau des Portal Radios. Das Radio ist ein wirklicher Hingucker und das es den Radiosong abspielt, macht es noch um einiges cooler.
