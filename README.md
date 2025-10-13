@@ -1,3 +1,5 @@
+# Portal Radio Version 2 is WIP, track my progress here -> [Portal-Radio-V2.0-WIP](https://github.com/MrTiiv/Portal-Radio-V2.0-Doku-German)
+
 # Funktionierendes Portal Radio (Remix von [@AIBot | MyMiniFactory](https://www.myminifactory.com/object/3d-print-portal-radio-50006) (GERMAN)
 
 ## Vorwort
