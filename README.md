@@ -1,5 +1,3 @@
-# Diese Version meines Portal Radios ist unstabil und hat mehrere Bugs. Ich bin gerade dabei das Radio umzubauen. Wenn meine Tests erfolgreich sind werde ich die Finale Version hier auf dieser Page updaten. 
-
 # Funktionierendes Portal Radio (Remix von [@AIBot | MyMiniFactory](https://www.myminifactory.com/object/3d-print-portal-radio-50006) (GERMAN)
 
 ## Vorwort
