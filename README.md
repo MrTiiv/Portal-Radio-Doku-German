@@ -23,10 +23,14 @@ Verwendete Drucker:
 -   Kleinere Teile wurden mit dem Bambu Lab A1 Mini (Druckfläche 180x180x180 mm) gedruckt.
 
 ### Bekannte Probleme
-Da dies mein erstes Projekt ist, kenne ich mich mit der verwendeten Mikroelektronik noch wenig aus. Ein nerviges Problem ist der DFPlayer. Beim Einschalten gibt er ein Störgeräusch von sich, bevor er den Song abspielt. Auch während des Songs ist ein leises, aber hörbares Störgeräusch vorhanden, insbesondere bei geringer Lautstärke. Bis jetzt habe ich dafür noch keine Lösung gefunden.
+Da dies mein erstes Projekt ist, kenne ich mich mit der verwendeten Mikroelektronik noch wenig aus. 
+Ein nerviges Problem ist der DFPlayer. 
+~~Beim Einschalten gibt er ein Störgeräusch von sich, bevor er den Song abspielt. Auch während des Songs ist ein leises, aber hörbares Störgeräusch vorhanden, insbesondere bei geringer Lautstärke. Bis jetzt habe ich dafür noch keine Lösung gefunden.~~
+Das DFPlayer Problem wurde gelöst, die Verbindung vom PAM zum DFPlayer muss ein geschrimtes Kabel sein, damit sind die Störgeräusche um einiges leiser
 
 ~~Dreht man den Verstärker PAM8403 bis ganz an Ende zu dem Rastpunkt und wieder zurück Startet der Arduino aus unbekannten Gründen neu. Ich habe das Problem bisher noch nicht behoben und habe bisher auch noch keinen Lösungsansatz.~~
-Das Problem mit dem Absturz ist behoben. Ich habe Kondensatoren hinzugefügt, einmal auf Plus und einmal auf Minus (siehe Schaltplan), damit ist das Problem im Augenblick behoben.
+~~Das Problem mit dem Absturz ist behoben. Ich habe Kondensatoren hinzugefügt, einmal auf Plus und einmal auf Minus (siehe Schaltplan), damit ist das Problem im Augenblick behoben.~~
+Die Abstürze wurden alle behoben beim entfernen des Step Up Moduls und des Kleinen Akkus, eine Powerbank hat das ganze Problem gelöst. 
 
   
 ## Das Portal Radio
@@ -48,7 +52,6 @@ Hier sind die Teile, die ich für das Radio gekauft habe, eine Mischung vom Amaz
   
 - [7 Segment Anzeige TM1637 Blau](https://www.amazon.de/dp/B09X1Z8CC8?ref=ppx_yo2ov_dt_b_fed_asin_title)  
 - [USB Typ C Batterielademodul TP4056](https://amzn.eu/d/bJx8FN1) [¹]
-- [Step Up Module MT3608](https://amzn.eu/d/h4YCcV0)  
 - [AZ Delivery Mikrocontroller AZ-ATmega 328](https://amzn.eu/d/12fmeU2)  
 - [2x AZ Delivery DFPlayer Mini 3 Watt Lautsprecher](https://amzn.eu/d/aCnC54G)  
 - [5mm LED Blau](https://amzn.eu/d/fTzluys)  
@@ -56,7 +59,7 @@ Hier sind die Teile, die ich für das Radio gekauft habe, eine Mischung vom Amaz
 - [PAM8403 Audio Verstärker](https://de.aliexpress.com/item/1005006135778016.html)  
 - [JST XH 2 Polig Kabelstecker](https://de.aliexpress.com/item/1005006577211209.html) [²] 
 - [Wippschalter Rund](https://amzn.eu/d/0qvCGKB)  
-- [verwendeter Akku](https://www.conrad.de/de/p/reely-modellbau-akkupack-lipo-3-7-v-1000-mah-zellen-zahl-1-30-c-bec-2582341.html) [³]
+- [verwendeter Akku](https://amzn.eu/d/0gAyQbPa) 
 - [~350g PLA Schwarzes Filament](https://amzn.eu/d/ibRLTVA)
 - [~265g PLA Weißes Filament](https://amzn.eu/d/6HExSpr)
 - [~30g PLA Durchsichtiges Filament](https://amzn.eu/d/5HmzEyD)
@@ -67,8 +70,6 @@ Hier sind die Teile, die ich für das Radio gekauft habe, eine Mischung vom Amaz
 [¹]: Vorsicht! mit diesem Lademodul kann man nur mit einem USB A auf USB C Kabel laden, nicht mit einem USB C - USB C Kabel.
 
 [²]: Um den Akku und die Lautsprecher abtrennbar zu machen, habe ich die Originalen Stecker der jeweiligen Komponenten abgeschnitten und diesen angelötet, schlauer wäre gewesen gleich den richtigen Stecker zu bestellen aber egal ^^.
-
-[³]: Alle Akkus, die ich auf Amazon bestellt habe, haben mit diesem Projekt nicht funktioniert. Der Akku war immer zu schwach und das Radio wurde bei hoher Lautstärke abgeschaltet. Deswegen der Reely Modellbauakku von Conrad. Eine Powerbank hätte es glaube ich auch getan.
 
 [⁴]: Das PETG Filament ist für das Aperture Logo vorne am Radio damit man es sieht. Man sieht es mit dem PETG Filament zwar, es kommt aber tatsächlich darauf an wie man draufschaut. Auffällig ist es nicht, also kann man dafür auch anderes Filament z.b. in einer anderen Farbe verwenden.
 
@@ -140,7 +141,7 @@ Die Löcher für den ein/aus Schalter so wie das Loch für den Poti hinten und d
 ### Schaltplan
 Wie bereits am Anfang erwähnt, habe ich die Elektronik von einer DIY Anleitung für ein Internetradio von AZ Delivery abgeschaut. Aber bevor ich die Elektronik verdrahtet und eingebaut habe, habe ich mit der Software **Fritzing** einen Schaltplan erstellt, den ich euch hier zur Verfügung stelle. 
 
-![Alt](https://github.com/MrTiiv/Portal-Radio-Doku-German/blob/7c293ca7b7eab88b6547e957c4e30cca014b7c9e/Bilder%20f%C3%BCr%20Doku/Portal%20Radio%20Sketch%20V0.3%20Schematic.png?raw=true)
+![Alt](https://github.com/MrTiiv/Portal-Radio-Doku-German/blob/main/Bilder%20f%C3%BCr%20Doku/Portal%20Radio%20Sketch%20V1.2%20Schematic.png?raw=true)
 > VORSICHT! Bei der Programmierung des DFPlayers ist RX und TX wieso auch immer gedreht.
 z.b. **`SoftwareSerial mySoftwareSerial(11, 10); // RX, TX`** funktioniert nicht du musst
  **`SoftwareSerial mySoftwareSerial(10, 11); // RX, TX`** verwenden.
