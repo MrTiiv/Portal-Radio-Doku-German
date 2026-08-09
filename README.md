@@ -3,7 +3,7 @@
 ## Vorwort
 Zunächst ein Dank an:
 - @Aibot für die Druckdateien
-- @Astro_Flora für das Drucken von “Shell” und “Bottom” mit seinem Bambu Lab X1C 
+- [**@Astro_Flora**](https://github.com/fh190) für das Drucken von “Shell” und “Bottom” mit seinem Bambu Lab X1C 
 - @monion für das Helfen mit dem Code (er ist nicht verantwortlich für den endgültigen Code ;D )
 - @Chair Gaming für allgemeine Hilfe
 
